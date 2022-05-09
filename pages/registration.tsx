@@ -29,7 +29,7 @@ const Registration: NextPage = () => {
 							{...register("surname", { required: true })}
 						/>
 						<input
-							type='text'
+							type='email'
 							{...register("email", { required: true })}
 						/>
 						<input

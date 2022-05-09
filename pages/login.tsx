@@ -2,13 +2,18 @@ import type { NextPage } from "next";
 import { useForm } from "react-hook-form";
 import s from "../styles/Login.module.scss";
 import Banner from "../assets/images/illustration_login.svg";
+import Shape from "../assets/images/shape.svg";
 import Link from "next/link";
 import { Button } from "../components/Button/Button";
 
 const Login: NextPage = () => {
-	const { register, handleSubmit, formState: {errors} } = useForm();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm();
 	const onSubmit = (data: any) => {
-		console.log(data)
+		console.log(data);
 	};
 	return (
 		<div>
@@ -21,9 +26,18 @@ const Login: NextPage = () => {
 				<h1>Войти</h1>
 				<p>Введите свои данные ниже</p>
 				<form onSubmit={handleSubmit(onSubmit)}>
-					{errors.email || errors.password && <span>Ошибка</span> }
+					{errors.email ||
+						errors.password && (
+							<div>
+								<Shape />
+								<span>
+									Используй email : demo@minimals.ru / пароль
+									: demo1234
+								</span>
+							</div>
+						)}
 					<input
-						type='text'
+						type='email'
 						{...register("email", { required: true })}
 					/>
 					<input

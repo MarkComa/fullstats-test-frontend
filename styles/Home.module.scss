@@ -1,3 +1,16 @@
+.home {
+  height: 100vh;
+	background: radial-gradient(
+			106.64% 115.35% at 4.1% 5.52%,
+			rgba(22, 28, 36, 0.48) 0%,
+			rgba(22, 28, 36, 0.8) 45.53%,
+			#161c24 100%,
+			#161c24 100%,
+			#161c24 100%
+		)
+	// 	/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+	// transform: matrix(-1, 0, 0, 1, 0, 0);
+}
 .btn {
-  width: 191px;
+	width: 191px;
 }

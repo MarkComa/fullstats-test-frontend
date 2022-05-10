@@ -1,10 +1,12 @@
 import type { NextPage } from 'next'
 import { Button } from '../components/Button/Button'
-import styles from '../styles/Home.module.scss'
+import { Header } from '../components/Header/Header'
+import s from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
-  return <div>Home
-    <Button apparance={'primary'} className={styles.btn}>Попробовать сейчас</Button>
+  return <div className={s.home}>
+    <Header/>
+    <Button apparance={'primary'} className={s.btn}>Попробовать сейчас</Button>
   </div>
 }
 

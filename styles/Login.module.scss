@@ -1,0 +1,40 @@
+.login {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 380px auto;
+}
+.form {
+	display: grid;
+	grid-template-areas:
+    "err err"
+		"email email"
+		"password password"
+    "checkbox link"
+    "btn btn"
+}
+.err {
+  grid-area: err;
+  margin-bottom: 24px;
+}
+.email {
+	grid-area: email;
+}
+.password {
+	grid-area: password;
+}
+.checkbox {
+  grid-area: checkbox;
+}
+.link {
+  grid-area: link;
+}
+.btn {
+  grid-area: btn;
+}
+.email,
+.password {
+	height: 56px;
+	border: 1px solid rgba(145, 158, 171, 0.3);
+	border-radius: 8px;
+  margin-bottom: 24px;
+}

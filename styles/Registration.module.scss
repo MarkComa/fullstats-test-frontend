@@ -1,0 +1,34 @@
+.registration {
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 380px auto;
+}
+.form {
+	display: grid;
+	grid-template-areas:
+		"firstname surname"
+		"email email"
+		"password password";
+}
+.firstname {
+	grid-area: firstname;
+  margin-right: 16px;
+}
+.surname {
+	grid-area: surname;
+}
+.email {
+	grid-area: email;
+}
+.password {
+	grid-area: password;
+}
+.firstname,
+.surname,
+.email,
+.password {
+	height: 56px;
+	border: 1px solid rgba(145, 158, 171, 0.3);
+	border-radius: 8px;
+  margin-bottom: 24px;
+}

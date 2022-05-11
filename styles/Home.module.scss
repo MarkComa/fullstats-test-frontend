@@ -1,15 +1,60 @@
 .home {
-  height: 100vh;
-	background: radial-gradient(
+	height: 100vh;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: radial-gradient(
 			106.64% 115.35% at 4.1% 5.52%,
 			rgba(22, 28, 36, 0.48) 0%,
 			rgba(22, 28, 36, 0.8) 45.53%,
 			#161c24 100%,
 			#161c24 100%,
 			#161c24 100%
-		)
-	// 	/* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
-	// transform: matrix(-1, 0, 0, 1, 0, 0);
+		);
+		transform: matrix(-1, 0, 0, 1, 0, 0);
+	}
+	&::after {
+		content: "";
+		background: url("../assets/images/overlay.png") no-repeat;
+		position: absolute;
+		width: 543px;
+		bottom: 0;
+		top: 202px;
+		right: 75px;
+		z-index: -1;
+		opacity: 0.2;
+	}
+}
+.hero {
+	padding-left: 144px;
+	padding-top: 228px;
+}
+.title {
+	margin: 0;
+	padding: 0;
+	font-weight: 700;
+	font-size: 64px;
+	line-height: 80px;
+	color: var(--white);
+	& span {
+		color: var(--blue);
+		margin-left: 16px;
+	}
+}
+.description {
+	max-width: 466px;
+	margin: 40px 0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: var(--white);
+	// letter-spacing: 0.55px;
 }
 .btn {
 	width: 191px;

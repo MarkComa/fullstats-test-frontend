@@ -24,7 +24,7 @@ const Login: NextPage = () => {
 					<span>Нет учетной записи?</span>
 					<Link href='/registration'>Зарегистрироваться</Link>
 				</header>
-				<h1>Войти</h1>
+				<h2>Войти</h2>
 				<p>Введите свои данные ниже</p>
 				<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
 					<span className={s.err}>

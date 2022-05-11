@@ -8,7 +8,7 @@ const ResetPassword: NextPage = () => {
   const onSubmit = () => {}
   return (
     <div>
-      <h1>Забыли свой пароль?</h1>
+      <h2>Забыли свой пароль?</h2>
       <p>Пожалуйста, введите адрес электронной почты, связанный с вашей учетной записью, и мы отправим вам ссылку для сброса пароля.</p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <input type="email" />

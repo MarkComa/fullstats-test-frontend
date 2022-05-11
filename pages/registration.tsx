@@ -17,7 +17,7 @@ const Registration: NextPage = () => {
 					<span>Уже есть аккаунт?</span>
 					<Link href='/login'>Войти</Link>
 				</header>
-				<h1>Зарегистрироваться</h1>
+				<h2>Зарегистрироваться</h2>
 				<p>Зарегистрируйтесь, чтобы пользоваться сервисом:</p>
 				<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
 					<input

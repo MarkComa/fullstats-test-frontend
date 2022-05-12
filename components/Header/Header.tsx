@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 import Logo from "../../assets/images/logo.svg";
 import s from "./Header.module.scss";
+import { HeaderProps } from "./Header.props";
 
-export const Header = () => {
-	const isAuth = false; //
+export const Header = ({isAuth}:HeaderProps) => {
 	return (
 		<div className={s.header}>
 			<div className={s.left}>

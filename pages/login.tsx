@@ -20,27 +20,29 @@ const Login: NextPage = () => {
 		<div className={s.login}>
 			<AuthBanner banner={banner.src} />
 			<div>
-				<header>
+				<header className={s.header}>
 					<span>Нет учетной записи?</span>
 					<Link href='/registration'>Зарегистрироваться</Link>
 				</header>
-				<h2>Войти</h2>
+				<div className={s.hero}>
+				<h2 className={s.title}>Войти</h2>
 				<p>Введите свои данные ниже</p>
 				<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-					<span className={s.err}>
-						{errors.email || errors.password ? <ErrorForm /> : null}
-					</span>
+					
+						{errors.email || errors.password ? <span className={s.err}> <ErrorForm /> </span>: null}
+					
 					<input
 						type='email'
 						className={s.email}
+						placeholder={'Email'}
 						{...register("email", { required: true })}
 					/>
 					<input
 						className={s.password}
+						placeholder={'Пароль'}
 						type='password'
 						{...register("password", { required: true })}
 					/>
-					<div>
 						<div className={s.checkbox}>
 							<input
 								type='checkbox'
@@ -50,14 +52,16 @@ const Login: NextPage = () => {
 								Запомнить меня
 							</label>
 						</div>
-						<Link href='/resetPassword' className={s.link}>
+						<div className={s.link}>
+						<Link href='/resetPassword' >
 							Забыли пароль?
 						</Link>
-					</div>
+						</div>
 					<Button type='submit' className={s.btn} apparance={"primary"}>
 						Войти
 					</Button>
 				</form>
+				</div>
 			</div>
 		</div>
 	);

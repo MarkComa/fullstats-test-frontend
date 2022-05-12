@@ -4,10 +4,13 @@ body {
   padding: 0;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
+  color: var(--black);
   max-width: 1440px;
   position: relative;
 }
-
+h1, h2, h3, p {
+  margin: 0;
+}
 a {
   color: inherit;
   text-decoration: none;

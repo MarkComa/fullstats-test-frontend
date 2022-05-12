@@ -1,20 +1,54 @@
 .login {
-  display: grid;
-  height: 100vh;
-  grid-template-columns: 380px auto;
+	display: grid;
+	height: 100vh;
+	grid-template-columns: 380px auto;
+}
+.header {
+	margin-top: 40px;
+	margin-right: 40px;
+	display: flex;
+	justify-content: flex-end;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	& a {
+		margin-left: 3px;
+		color: var(--blue);
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+.hero {
+	margin-top: 281px;
+	margin-right: 23.58%; // 250px при max-width: 1440
+	margin-left: 31.14%; // 330px при max-width: 1440
+	max-width: 480px;
+	& p {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+.title {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 8px;
 }
 .form {
 	display: grid;
+	gap: 24px 0;
 	grid-template-areas:
-    "err err"
+		"err err"
 		"email email"
 		"password password"
-    "checkbox link"
-    "btn btn"
+		"checkbox link"
+		"btn btn";
 }
 .err {
-  grid-area: err;
-  margin-bottom: 24px;
+	grid-area: err;
+  margin-top: 40px;
 }
 .email {
 	grid-area: email;
@@ -23,18 +57,28 @@
 	grid-area: password;
 }
 .checkbox {
-  grid-area: checkbox;
+	grid-area: checkbox;
+	text-align: start;
 }
 .link {
-  grid-area: link;
+	grid-area: link;
+	text-align: end;
+	& a {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 22px;
+		color: var(--blue);
+	}
 }
 .btn {
-  grid-area: btn;
+	grid-area: btn;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 26px;
 }
 .email,
 .password {
 	height: 56px;
 	border: 1px solid rgba(145, 158, 171, 0.3);
 	border-radius: 8px;
-  margin-bottom: 24px;
 }

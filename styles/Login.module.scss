@@ -20,7 +20,7 @@
 	}
 }
 .hero {
-	margin-top: 281px;
+	margin-top: 219px;
 	margin-right: 23.58%; // 250px при max-width: 1440
 	margin-left: 31.14%; // 330px при max-width: 1440
 	max-width: 480px;
@@ -45,6 +45,18 @@
 		"password password"
 		"checkbox link"
 		"btn btn";
+    & input {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      padding: 16px 0 16px 14px;
+      &::placeholder {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: var(--gray);
+      }
+    }
 }
 .err {
 	grid-area: err;

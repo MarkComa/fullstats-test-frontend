@@ -3,16 +3,67 @@
 	height: 100vh;
 	grid-template-columns: 380px auto;
 }
+
+.header {
+	margin-top: 40px;
+	margin-right: 40px;
+	display: flex;
+	justify-content: flex-end;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	& a {
+		margin-left: 3px;
+		color: var(--blue);
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 22px;
+	}
+}
+.hero {
+	margin-top: 219px;
+	margin-right: 23.58%; // 250px при max-width: 1440
+	margin-left: 31.14%; // 330px при max-width: 1440
+	max-width: 480px;
+	& p {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+	}
+}
+.title {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 8px;
+}
+
 .form {
 	display: grid;
+	margin-top: 24px;
+	gap: 24px 0;
 	grid-template-areas:
 		"firstname surname"
 		"email email"
-		"password password";
+		"password password"
+		"btn btn";
+
+	& input {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 16px 0 16px 14px;
+		&::placeholder {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			color: var(--gray);
+		}
+	}
 }
 .firstname {
 	grid-area: firstname;
-  margin-right: 16px;
+	margin-right: 16px;
 }
 .surname {
 	grid-area: surname;
@@ -23,6 +74,12 @@
 .password {
 	grid-area: password;
 }
+.btn {
+	grid-area: btn;
+	font-weight: 700;
+	font-size: 15px;
+	line-height: 26px;
+}
 .firstname,
 .surname,
 .email,
@@ -30,5 +87,20 @@
 	height: 56px;
 	border: 1px solid rgba(145, 158, 171, 0.3);
 	border-radius: 8px;
-  margin-bottom: 24px;
+}
+.privacy {
+	display: block;
+	margin-top: 24px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	text-align: center;
+	color: var(--gray);
+	& a {
+		color: var(--blue);
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 }

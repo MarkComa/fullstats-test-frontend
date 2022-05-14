@@ -1,7 +1,7 @@
 import React from "react";
 import { AuthBannerProps } from "./AuthBanner.props";
 import s from "./AuthBanner.module.scss";
-import Logo from "../../assets/images/logo.svg";
+import { Logo } from "../Logo/Logo";
 
 export const AuthBanner = ({
 	banner,
@@ -11,8 +11,7 @@ export const AuthBanner = ({
 	return (
 		<div className={s.authBanner} {...props}>
 			<div className={s.logo}>
-				<img src={Logo.src} alt='logo' />
-				<span className={s.title}>FullStats</span>
+				<Logo color='black'/>
 			</div>
 			{banner && <img className={s.banner} src={banner} alt='banner' />}
 		</div>

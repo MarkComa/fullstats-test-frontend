@@ -3,23 +3,7 @@
 	justify-content: space-between;
 	padding: 32px 150px 0;
 }
-.left {
-	display: flex;
-	& span {
-		margin-left: 8px;
-	}
-}
-.right {
-}
-.logo {
-	&__title {
-		color: var(--white);
-		font-family: "Roboto";
-		font-weight: 800;
-		font-size: 26px;
-		line-height: 30px;
-	}
-}
+
 .link a {
 	font-family: "Roboto";
 	font-weight: 700;

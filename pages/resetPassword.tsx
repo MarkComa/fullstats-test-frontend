@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Button } from '../components/Button/Button';
+import { Logo } from '../components/Logo/Logo';
 import s from '../styles/ResetPassword.module.scss'
 
 const ResetPassword: NextPage = () => {
@@ -9,6 +10,7 @@ const ResetPassword: NextPage = () => {
   const onSubmit = () => {}
   return (
     <div className={s.resetPassword}>
+      <Logo className={s.logo} color='black'/>
       <h2 className={s.title}>Забыли свой пароль?</h2>
       <p className={s.description}>Пожалуйста, введите адрес электронной почты, связанный с вашей учетной записью, и мы отправим вам ссылку для сброса пароля.</p>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>

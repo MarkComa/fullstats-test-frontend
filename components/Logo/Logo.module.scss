@@ -1,0 +1,20 @@
+.logo {
+	display: flex;
+	cursor: pointer;
+	&__icon{
+		margin-right: 8px;
+	}
+	&__title {
+		font-family: "Roboto";
+		font-weight: 800;
+		font-size: 26px;
+		line-height: 30px;
+		&__white {
+			color: var(--white);
+		}
+		&__black {
+			color: var(--black);
+		}
+	
+	}
+}

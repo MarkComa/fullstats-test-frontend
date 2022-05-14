@@ -1,18 +1,17 @@
 import Link from "next/link";
 import React from "react";
-import Logo from "../../assets/images/logo.svg";
+import { Logo } from "../Logo/Logo";
 import s from "./Header.module.scss";
 import { HeaderProps } from "./Header.props";
 
 export const Header = ({isAuth}:HeaderProps) => {
 	return (
 		<div className={s.header}>
-			<div className={s.left}>
-				<img className={s.logo} src={Logo.src} alt='Logo' />
-				<span className={s.logo__title}>FullStats</span>
+			<div>
+				<Logo />
 			</div>
 
-			<div className={s.right}>
+			<div>
 				{isAuth ? (
 					<span></span>
 				) : (

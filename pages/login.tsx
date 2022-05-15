@@ -18,31 +18,34 @@ const Login: NextPage = () => {
 	};
 	return (
 		<div className={s.login}>
-			<AuthBanner banner={banner.src} />
-			<div>
+			<AuthBanner banner={banner.src} className={s.authBanner} />
+			<section>
 				<header className={s.header}>
 					<span>Нет учетной записи?</span>
 					<Link href='/registration'>Зарегистрироваться</Link>
 				</header>
 				<div className={s.hero}>
-				<h2 className={s.title}>Войти</h2>
-				<p>Введите свои данные ниже</p>
-				<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-					
-						{errors.email || errors.password ? <span className={s.err}> <ErrorForm /> </span>: null}
-					
-					<input
-						type='email'
-						className={s.email}
-						placeholder={'Email'}
-						{...register("email", { required: true })}
-					/>
-					<input
-						className={s.password}
-						placeholder={'Пароль'}
-						type='password'
-						{...register("password", { required: true })}
-					/>
+					<h2 className={s.title}>Войти</h2>
+					<p>Введите свои данные ниже</p>
+					<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
+						{errors.email || errors.password ? (
+							<span className={s.err}>
+								<ErrorForm />
+							</span>
+						) : null}
+
+						<input
+							type='email'
+							className={s.email}
+							placeholder={"Email"}
+							{...register("email", { required: true })}
+						/>
+						<input
+							className={s.password}
+							placeholder={"Пароль"}
+							type='password'
+							{...register("password", { required: true })}
+						/>
 						<div className={s.checkbox}>
 							<input
 								type='checkbox'
@@ -53,16 +56,17 @@ const Login: NextPage = () => {
 							</label>
 						</div>
 						<div className={s.link}>
-						<Link href='/resetPassword' >
-							Забыли пароль?
-						</Link>
+							<Link href='/resetPassword'>Забыли пароль?</Link>
 						</div>
-					<Button type='submit' className={s.btn} apparance={"primary"}>
-						Войти
-					</Button>
-				</form>
+						<Button
+							type='submit'
+							className={s.btn}
+							apparance={"primary"}>
+							Войти
+						</Button>
+					</form>
 				</div>
-			</div>
+			</section>
 		</div>
 	);
 };

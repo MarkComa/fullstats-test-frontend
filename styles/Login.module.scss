@@ -45,22 +45,22 @@
 		"password password"
 		"checkbox link"
 		"btn btn";
-    & input {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 16px 0 16px 14px;
-      &::placeholder {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        color: var(--gray);
-      }
-    }
+	& input {
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 16px 0 16px 14px;
+		&::placeholder {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			color: var(--gray);
+		}
+	}
 }
 .err {
 	grid-area: err;
-  margin-top: 40px;
+	margin-top: 40px;
 }
 .email {
 	grid-area: email;
@@ -93,4 +93,25 @@
 	height: 56px;
 	border: 1px solid rgba(145, 158, 171, 0.3);
 	border-radius: 8px;
+}
+@media screen and (max-width: 768px) {
+	.login {
+		grid-template-columns: 1fr;
+		gap: 64px;
+		grid-template-rows: 67px 1fr;
+		& section {
+			display: flex;
+			flex-direction: column-reverse;
+			justify-content: flex-end;
+		}
+	}
+
+	.hero {
+		margin: 0 20px;
+	}
+	.err span{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 22px;
+	}
 }

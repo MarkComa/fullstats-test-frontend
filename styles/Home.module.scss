@@ -43,7 +43,6 @@
 	color: var(--white);
 	& span {
 		color: var(--blue);
-		margin-left: 16px;
 	}
 }
 .description {
@@ -63,4 +62,21 @@
 	font-weight: 700;
 	font-size: 15px;
 	line-height: 26px;
+}
+
+@media screen and (max-width: 768px) {
+	.hero {
+		padding: 16px;
+		text-align: center;
+	}
+	.title {
+		margin-top: 88px;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 48px;
+	}
+	.description {
+		max-width: max-content;
+	}
 }

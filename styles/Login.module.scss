@@ -98,7 +98,7 @@
 	.login {
 		grid-template-columns: 1fr;
 		gap: 64px;
-		grid-template-rows: 67px 1fr;
+		height: auto;
 		& section {
 			display: flex;
 			flex-direction: column-reverse;

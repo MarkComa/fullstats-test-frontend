@@ -6,10 +6,10 @@ export const authApi = createApi({
 	baseQuery: fetchBaseQuery({ baseUrl: "https://api.fullstats.ru/api/v1/" }),
 	endpoints: (build) => ({
 		login: build.mutation<UserResponse, LoginRequest>({
-			query: () => ({
-				url: "login",
+			query: (credential) => ({
+				url: "auth/login/",
 				method: "POST",
-				body: "application/json",
+				body: credential,
 			}),
 		}),
 	}),

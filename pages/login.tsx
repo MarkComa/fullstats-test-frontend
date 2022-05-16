@@ -39,7 +39,7 @@ const Login: NextPage = () => {
 					<h2 className={s.title}>Войти</h2>
 					<p>Введите свои данные ниже</p>
 					<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-						{errors.username || errors.password ? (
+						{errors.email || errors.password ? (
 							<span className={s.err}>
 								<ErrorForm />
 							</span>
@@ -49,7 +49,7 @@ const Login: NextPage = () => {
 							type='email'
 							className={s.email}
 							placeholder={"Email"}
-							{...register("username", { required: true })}
+							{...register("email", { required: true })}
 						/>
 						<input
 							className={s.password}

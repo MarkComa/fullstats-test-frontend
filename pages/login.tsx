@@ -1,20 +1,31 @@
 import type { NextPage } from "next";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import s from "../styles/Login.module.scss";
 import banner from "../assets/images/illustration_login.svg";
 import Link from "next/link";
 import { Button } from "../components/Button/Button";
 import { ErrorForm } from "../components/ErrorForm/ErrorForm";
 import { AuthBanner } from "../components/AuthBanner/AuthBanner";
+import { useLoginMutation } from "../store/auth/auth.api";
+import { useDispatch } from "react-redux";
+import { LoginRequest } from "../store/auth/auth.types";
 
 const Login: NextPage = () => {
+	const dispatch = useDispatch()
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm();
-	const onSubmit = (data: any) => {
-		console.log(data);
+	} = useForm<LoginRequest>();
+	const [login, {isLoading}] = useLoginMutation();
+	const onSubmit: SubmitHandler<LoginRequest> = async (data) => {
+		console.log(data)
+		try {
+			const res = await login(data);
+			console.log(res)
+		} catch (error) {
+			console.log(error)
+		}
 	};
 	return (
 		<div className={s.login}>
@@ -28,7 +39,7 @@ const Login: NextPage = () => {
 					<h2 className={s.title}>Войти</h2>
 					<p>Введите свои данные ниже</p>
 					<form onSubmit={handleSubmit(onSubmit)} className={s.form}>
-						{errors.email || errors.password ? (
+						{errors.username || errors.password ? (
 							<span className={s.err}>
 								<ErrorForm />
 							</span>
@@ -38,7 +49,7 @@ const Login: NextPage = () => {
 							type='email'
 							className={s.email}
 							placeholder={"Email"}
-							{...register("email", { required: true })}
+							{...register("username", { required: true })}
 						/>
 						<input
 							className={s.password}
@@ -49,7 +60,6 @@ const Login: NextPage = () => {
 						<div className={s.checkbox}>
 							<input
 								type='checkbox'
-								{...register("rememberMe")}
 							/>
 							<label className={s.rememberMe}>
 								Запомнить меня

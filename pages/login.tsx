@@ -19,7 +19,6 @@ const Login: NextPage = () => {
 	} = useForm<LoginRequest>();
 	const [login, {isLoading}] = useLoginMutation();
 	const onSubmit: SubmitHandler<LoginRequest> = async (data) => {
-		console.log(data)
 		try {
 			const res = await login(data);
 			console.log(res)

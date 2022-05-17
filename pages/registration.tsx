@@ -1,14 +1,34 @@
 import { NextPage } from "next";
 import Link from "next/link";
 import banner from "../assets/images/artboard.svg";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { AuthBanner } from "../components/AuthBanner/AuthBanner";
 import { Button } from "../components/Button/Button";
 import s from "../styles/Registration.module.scss";
+import { useRegistrationMutation } from "../store/auth/auth.api";
+
+export interface DataForm {
+	firstname: string;
+	surname: string;
+  email: string;
+  password: string;
+}
 
 const Registration: NextPage = () => {
-	const { register, handleSubmit } = useForm();
-	const onSubmit = () => {};
+	const [registration, {isLoading}] = useRegistrationMutation();
+	const { register, handleSubmit } = useForm<DataForm>();
+	const onSubmit: SubmitHandler<DataForm> = async (data) => {
+		try {
+			const res = await registration({
+				username: `${data.firstname + " " + data.surname}`,
+				email: data.email,
+  			password: data.password
+			});
+			console.log(res)
+		} catch (error) {
+			console.log(error)
+		}
+	};
 	return (
 		<div className={s.registration}>
 			<AuthBanner banner={banner.src} />

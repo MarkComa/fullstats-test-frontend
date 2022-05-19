@@ -9,21 +9,22 @@ import { AuthBanner } from "../components/AuthBanner/AuthBanner";
 import { useLoginMutation } from "../store/auth/auth.api";
 import { useDispatch } from "react-redux";
 import { LoginRequest } from "../store/auth/auth.types";
+import { login } from "../store/reducers/authSlice";
 
 const Login: NextPage = () => {
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<LoginRequest>();
-	const [login, {isLoading}] = useLoginMutation();
+	const [apiLogin, { isLoading }] = useLoginMutation();
 	const onSubmit: SubmitHandler<LoginRequest> = async (data) => {
 		try {
-			const res = await login(data);
-			console.log(res)
+			const res = await apiLogin(data);
+			dispatch(login(res.data));
 		} catch (error) {
-			console.log(error)
+			console.log(error);
 		}
 	};
 	return (
@@ -57,9 +58,7 @@ const Login: NextPage = () => {
 							{...register("password", { required: true })}
 						/>
 						<div className={s.checkbox}>
-							<input
-								type='checkbox'
-							/>
+							<input type='checkbox' />
 							<label className={s.rememberMe}>
 								Запомнить меня
 							</label>

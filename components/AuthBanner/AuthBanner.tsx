@@ -15,7 +15,7 @@ export const AuthBanner = ({
 			<div className={s.logo}>
 				<Logo color='black'/>
 			</div>
-			{banner && <div className={s.banner}><Image width='364' height='273' src={banner} alt='banner' /></div>}
+			{banner && <div className={s.banner}><Image priority width='364' height='273' src={banner} alt='banner' /></div>}
 		</div>
 	);
 };

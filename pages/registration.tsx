@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import banner from "../assets/images/artboard.svg";
+import banner from "../assets/images/artboard.jpg";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AuthBanner } from "../components/AuthBanner/AuthBanner";
 import { Button } from "../components/Button/Button";

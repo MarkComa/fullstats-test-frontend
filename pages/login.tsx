@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import { SubmitHandler, useForm } from "react-hook-form";
 import s from "../styles/Login.module.scss";
-import banner from "../assets/images/illustration_login.svg";
+import banner from "../assets/images/illustration_login.jpg";
 import Link from "next/link";
 import { Button } from "../components/Button/Button";
 import { ErrorForm } from "../components/ErrorForm/ErrorForm";

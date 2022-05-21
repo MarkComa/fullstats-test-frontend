@@ -6,6 +6,7 @@ import { AuthBanner } from "../components/AuthBanner/AuthBanner";
 import { Button } from "../components/Button/Button";
 import s from "../styles/Registration.module.scss";
 import { useRegistrationMutation } from "../store/auth/auth.api";
+import { useRouter } from "next/router";
 
 export interface DataForm {
 	firstname: string;
@@ -16,6 +17,7 @@ export interface DataForm {
 
 const Registration: NextPage = () => {
 	const [registration, {isLoading}] = useRegistrationMutation();
+	const router = useRouter()
 	const { register, handleSubmit } = useForm<DataForm>();
 	const onSubmit: SubmitHandler<DataForm> = async (data) => {
 		try {
@@ -24,7 +26,9 @@ const Registration: NextPage = () => {
 				email: data.email,
   			password: data.password
 			});
-			console.log(res)
+			if (res.data) {
+				router.push('/login')
+			}
 		} catch (error) {
 			console.log(error)
 		}

@@ -7,12 +7,12 @@ import { Button } from "../components/Button/Button";
 import { ErrorForm } from "../components/ErrorForm/ErrorForm";
 import { AuthBanner } from "../components/AuthBanner/AuthBanner";
 import { useLoginMutation } from "../store/auth/auth.api";
-import { useDispatch } from "react-redux";
 import { LoginRequest } from "../store/auth/auth.types";
 import { login } from "../store/reducers/authSlice";
+import { useAppDispatch } from "../hook/hook";
 
 const Login: NextPage = () => {
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 	const {
 		register,
 		handleSubmit,
